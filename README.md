@@ -56,33 +56,33 @@ flowchart LR
 
 <br/>
 
-📁 Project Structure
-RoadDNA/
-├── public/                      # Static assets
-├── src/
-│   ├── assets/                   # Images and icons
-│   ├── components/
-│   │   ├── Layout.jsx              # Sidebar navigation + page frame
-│   │   └── AIAssistant.jsx         # In-app AI chat widget
-│   ├── data/
-│   │   ├── nepalDistricts.js       # District reference data
-│   │   └── nepalRoads.js           # Road network dataset (in progress)
-│   ├── pages/
-│   │   ├── Landing.jsx             # Animated intro page
-│   │   ├── Dashboard.jsx           # Command center overview
-│   │   ├── LiveMap.jsx             # Interactive district map
-│   │   ├── LiveCarDemo.jsx         # Live hardware telemetry + control
-│   │   ├── Analytical.jsx          # Analytics & predictions
-│   │   └── Alerts.jsx              # Road alert feed
-│   ├── services/
-│   │   ├── aiService.js            # AI model integration
-│   │   └── esp32Service.js         # ESP32 communication layer
-│   ├── App.jsx                    # Route definitions
-│   └── main.jsx                    # App entry point
-├── .env.example                 # Environment variable template
-├── package.json
-└── vite.config.js
-<br/>
+## 📁 Project Structure
+
+- **RoadDNA/**
+  - **public/** — Static assets
+  - **src/**
+    - **assets/** — Images and icons
+    - **components/**
+      - `Layout.jsx` — Sidebar navigation + page frame
+      - `AIAssistant.jsx` — In-app AI chat widget
+    - **data/**
+      - `nepalDistricts.js` — District reference data
+      - `nepalRoads.js` — Road network dataset (in progress)
+    - **pages/**
+      - `Landing.jsx` — Animated intro page
+      - `Dashboard.jsx` — Command center overview
+      - `LiveMap.jsx` — Interactive district map
+      - `LiveCarDemo.jsx` — Live hardware telemetry + control
+      - `Analytical.jsx` — Analytics & predictions
+      - `Alerts.jsx` — Road alert feed
+    - **services/**
+      - `aiService.js` — AI model integration
+      - `esp32Service.js` — ESP32 communication layer
+    - `App.jsx` — Route definitions
+    - `main.jsx` — App entry point
+  - `.env.example` — Environment variable template
+  - `package.json`
+  - `vite.config.js`
 🗺️ Roadmap
 <div align="center"> <img src="docs/images/project-roadmap.png" width="95%" alt="RoadDNA project roadmap showing four phases: prototype polish, scaling and data integration, and predictive analytics for smart cities"/> </div> <br/> <table> <tr><th align="left">Phase</th><th align="left">Goals</th></tr> <tr> <td valign="top"><b>Near-term</b></td> <td>
  Fleet mode — multiple vehicles feeding one live map simultaneously
