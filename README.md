@@ -26,14 +26,11 @@ Drive commands supported: FORWARD · LEFT · RIGHT · BACKWARD · STOP · EMERGE
 <br/> <div align="center"> <img src="docs/images/hardware-exploded-view.png" width="90%" alt="RoadDNA vehicle exploded hardware view showing sensor array, control board, power supply and drive components"/> <br/> <sub><i>Exploded view of the vehicle's hardware layout.</i></sub> </div> <br/> <div align="center"> <img src="docs/images/wiring-diagram.png" width="80%" alt="RoadDNA breadboard wiring diagram showing ESP32 and MPU6050 connections"/> <br/> <sub><i>Breadboard wiring — ESP32 to MPU6050 (I2C: SDA → GPIO21, SCL → GPIO22).</i></sub> </div> <br/>
 ⚙️ How It Works — The Workflow
 <div align="center">
-┌──────────────┐      ┌──────────────┐      ┌──────────────────┐      ┌──────────────┐
-│    SENSE     │      │   TRANSMIT   │      │  ANALYZE & ALERT  │     │   RESPOND    │
-├──────────────┤      ├──────────────┤      ├───────────────────┤      ├──────────────┤
-│ ESP32 +      │ ───► │ JSON data    │ ───► │ Debounce filters   │ ───► │ AI suggests  │
-│ Arduino +    │ WiFi │ streamed to  │100ms │ noise, flags       │      │ action, read │
-│ MPU6050 +    │      │ the browser  │      │ severe events,     │      │ aloud to     │
-│ 9-in-1 array │      │              │      │ updates live map   │      │ the driver   │
-└──────────────┘      └──────────────┘      └───────────────────┘      └──────────────┘
+WiFi
+🔧 SENSEESP32 + Arduino +MPU6050 + 9-in-1 array
+📡 TRANSMITJSON data streamedto the browser every 100ms
+🧠 ANALYZE & ALERTDebounce filters noise,flags severe events,updates live map
+🔊 RESPONDAI suggests action,read aloud to the driver
 </div>
 Sense — the vehicle's sensors continuously measure vibration, tilt, and obstacle distance
 Transmit — the ESP32's local web server streams readings as JSON to the dashboard over WiFi
@@ -113,14 +110,11 @@ RoadDNA/
 </td> </tr> </table> <br/>
 👥 Contributors
 <div align="center">
-Name	Focus Area
-Drishya Adhikari	Live Map & District Data
-Prasanna Basyal	App Core, Landing & Dashboard
-Aayush Bhatta	AI Assistant, Analytics & Alerts
+Drishya Adhikari
+Prasanna Basyal,
+Aayush Bhatta
 </div> <br/>
-📄 License
 
-This project is licensed under the MIT License — see the LICENSE file for details.
 
 <br/> <div align="center"> <img src="https://capsule-render.vercel.app/api?type=waving&color=0:1E3A5F,100:0F172A&height=100&section=footer" width="100%"/>
 
